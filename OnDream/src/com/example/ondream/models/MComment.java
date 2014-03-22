@@ -3,7 +3,7 @@ package com.example.ondream.models;
 import com.google.gson.annotations.SerializedName;
 
 public class MComment {
-	@SerializedName("id")
+	@SerializedName("comment_id")
 	private String id;
 	
 	@SerializedName("id")

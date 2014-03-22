@@ -57,7 +57,7 @@ public class NewsFeedFragment extends BaseFragment {
 		
 		setHasOptionsMenu(true);
 		
-		getActivity().getActionBar().setTitle("News Feeds");
+		getActivity().getActionBar().setTitle("");
 		
 		findViews(view);
 		
@@ -109,6 +109,7 @@ public class NewsFeedFragment extends BaseFragment {
 				Log.e(TAG, arg0.toString());
 				List<MDream> arrDreams = DataParsingController.parseDreams(arg0);
 				
+				listDreams.clear();
 				listDreams.addAll(arrDreams);
 				
 				adapter.notifyDataSetChanged();

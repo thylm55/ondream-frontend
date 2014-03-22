@@ -26,7 +26,7 @@ public class OnDreamVolley {
 	private String url;
 	
 	private static OnDreamVolley localClient;
-	private static String localClientUrl = "http://192.168.239.1/api/v1";
+	private static String localClientUrl = "http://easyimgur.com/api/v1";
 	
 	private OnDreamVolley() {
 		

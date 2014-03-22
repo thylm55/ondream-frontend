@@ -3,7 +3,7 @@ package com.example.ondream.models;
 import com.google.gson.annotations.SerializedName;
 
 public class MTag {
-	@SerializedName("id")
+	@SerializedName("tag_id")
 	private String id;
 	
 	@SerializedName("name")

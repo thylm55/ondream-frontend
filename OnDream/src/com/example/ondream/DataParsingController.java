@@ -15,15 +15,17 @@ import com.google.gson.Gson;
 
 public class DataParsingController {
 	
+	private static final String TAG = "DataParsingController";
+	
 	public static List<MDream> parseDreams(JSONObject jsonObj) {
 		List<MDream> dreams = new ArrayList<MDream>();
 		
 		JSONArray jsonArray;
-		MDream article = new MDream();
 		try {
 			jsonArray = jsonObj.getJSONArray("dreams");
 			
 			for (int i = 0; i < jsonArray.length(); i++) {
+				MDream article = new MDream();
 				try {
 					JSONObject json = jsonArray.getJSONObject(i);
 					
@@ -47,6 +49,9 @@ public class DataParsingController {
 			e1.printStackTrace();
 		}
 		
+		for (MDream dream: dreams) {
+			Log.e(TAG, dream.getId());
+		}
 		return dreams;
 	}
 	
