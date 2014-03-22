@@ -14,23 +14,6 @@
         android:text="Sign Up" />
 
     <EditText
-        android:id="@+id/edtCfrPasswd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSignup"
-        android:layout_alignLeft="@+id/btnSignup"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/textfield"
-        android:ems="10"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:textColor="#000000" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
         android:id="@+id/edtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,6 +50,20 @@
         android:background="@drawable/textfield"
         android:ems="10"
         android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/edtCfrPasswd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnSignup"
+        android:layout_below="@+id/edtPasswd"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/textfield"
+        android:ems="10"
+        android:hint="Confirm Password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:textColor="#000000" />

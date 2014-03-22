@@ -973,10 +973,10 @@ containing a value of this type.
         public static final int disableHome=0x7f040009;
         public static final int drawer_layout=0x7f040032;
         public static final int edit_query=0x7f040026;
-        public static final int edtCfrPasswd=0x7f040040;
-        public static final int edtEmail=0x7f040041;
-        public static final int edtName=0x7f040043;
-        public static final int edtPasswd=0x7f040042;
+        public static final int edtCfrPasswd=0x7f040043;
+        public static final int edtEmail=0x7f040040;
+        public static final int edtName=0x7f040042;
+        public static final int edtPasswd=0x7f040041;
         public static final int edt_Email=0x7f04003b;
         public static final int edt_Passwd=0x7f04003d;
         public static final int homeAsUp=0x7f040006;
@@ -1025,12 +1025,13 @@ containing a value of this type.
         public static final int abs__simple_dropdown_hint=0x7f030014;
         public static final int activity_main=0x7f030015;
         public static final int fragment_add_dream=0x7f030016;
-        public static final int fragment_news_feed=0x7f030017;
-        public static final int fragment_signin=0x7f030018;
-        public static final int fragment_signup=0x7f030019;
-        public static final int row_dream=0x7f03001a;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001b;
-        public static final int sherlock_spinner_item=0x7f03001c;
+        public static final int fragment_dreamdetail=0x7f030017;
+        public static final int fragment_news_feed=0x7f030018;
+        public static final int fragment_signin=0x7f030019;
+        public static final int fragment_signup=0x7f03001a;
+        public static final int row_dream=0x7f03001b;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001c;
+        public static final int sherlock_spinner_item=0x7f03001d;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
