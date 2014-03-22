@@ -972,10 +972,10 @@ containing a value of this type.
         public static final int disableHome=0x7f040009;
         public static final int drawer_layout=0x7f040032;
         public static final int edit_query=0x7f040026;
-        public static final int edtCfrPasswd=0x7f040041;
-        public static final int edtEmail=0x7f04003f;
-        public static final int edtName=0x7f04003e;
-        public static final int edtPasswd=0x7f040040;
+        public static final int edtCfrPasswd=0x7f04003e;
+        public static final int edtEmail=0x7f040041;
+        public static final int edtName=0x7f040040;
+        public static final int edtPasswd=0x7f04003f;
         public static final int edt_Email=0x7f04003b;
         public static final int edt_Passwd=0x7f04003d;
         public static final int homeAsUp=0x7f040006;

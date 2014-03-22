@@ -22,6 +22,7 @@ import com.example.ondream.OnDreamApplication;
 import com.example.ondream.R;
 import com.example.ondream.fragments.NewsFeedFragment;
 import com.example.ondream.fragments.SigninFragment;
+import com.example.ondream.fragments.SignupFragment;
 
 /**
  * Content activity for displaying fragments
@@ -66,7 +67,7 @@ public class ContentActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ActionBar ab = getActionBar(); 
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#a8b8d0"));     
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#6b95b1"));     
         ab.setBackgroundDrawable(colorDrawable);
 		// Settings
 		currentTitle = getString(R.string.app_name);
@@ -81,7 +82,7 @@ public class ContentActivity extends BaseActivity {
 			this.setPendingMessageIdFromIntent(getIntent());
 		}
 		
-		mainContent = new SigninFragment();
+		mainContent = new SignupFragment();
 		switchContent(mainContent, false, true, MAIN_CONTENT);
 		
 		// Get data from server
