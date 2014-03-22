@@ -114,6 +114,33 @@ public class OnDreamVolley {
 		}
 	}
 	
+	public void getListFriends(String userId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("user_id", userId);
+		
+		OnDreamVolley.get(getUrl("friends"), params, listener, errorListener);
+	}
+	
+	public void postSayGoodnight(String senderId, String receiverId, String messageType, String content, String pushAt,
+			Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		HashMap<String, String> params = new HashMap<String, String>();
+		String pushDate = null;
+		try {
+			pushDate = URLEncoder.encode(pushAt, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		params.put("sender_id", senderId);
+		params.put("receiver_id", receiverId);
+		params.put("message_type", messageType);
+		params.put("content", content);
+		params.put("push_at", pushDate);
+		
+		OnDreamVolley.get(getUrl("new_message"), params, listener, errorListener);
+	}
+	
 	public void postLogin(String email, String password, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("email", email);

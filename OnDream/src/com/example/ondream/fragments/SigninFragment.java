@@ -40,6 +40,10 @@ public class SigninFragment extends BaseFragment implements OnClickListener
 		btnSignin = (Button) view.findViewById(R.id.btn_Signin);
 		edtEmail = (EditText) view.findViewById(R.id.edt_Email);
 		edtPasswd = (EditText) view.findViewById(R.id.edt_Passwd);
+		
+		edtEmail.setText("maythywinter@gmail.com");
+		edtPasswd.setText("6789");
+		
 		btnLinkToSignup = (Button) view.findViewById(R.id.btnLinkToSignup);
 		btnSignin.setOnClickListener(this);
 		btnLinkToSignup.setOnClickListener(this);
@@ -68,7 +72,7 @@ public class SigninFragment extends BaseFragment implements OnClickListener
 		}
 		
 		if (v== btnLinkToSignup){
-			//COde Link two Fragment
+			((ContentActivity) getActivity()).switchContent(new SignupFragment(), true, false, "mContext");
 		}
 	}
 }

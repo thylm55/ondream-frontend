@@ -50,6 +50,28 @@ public class DataParsingController {
 		return dreams;
 	}
 	
+	public static List<MUser> parseUsers(JSONObject jsonObj) {
+		Gson gson = new Gson();
+		List<MUser> users = new ArrayList<MUser>();
+		
+		JSONArray jsonArray;
+		MUser user = new MUser();
+		try {
+			jsonArray = jsonObj.getJSONArray("friends");
+			
+			for (int i = 0; i < jsonArray.length(); i++) {
+				JSONObject json = jsonArray.getJSONObject(i);
+				user = gson.fromJson(json.toString(), MUser.class);
+				users.add(user);
+			}
+			
+		} catch (JSONException e) {
+			
+		}
+		
+		return users;
+	}
+	
 	public static MUser parseUser(JSONObject jsonObj) {
 		MUser user = new MUser();
 		Gson gson = new Gson();

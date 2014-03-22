@@ -48,7 +48,7 @@
             android:layout_weight="1"
             android:text="Comment It"
             android:gravity="center_horizontal"
-            android:background="#c0c0c0"
+            android:background="#ffcf1d"
             android:padding="10dp" />
     </LinearLayout>
 
