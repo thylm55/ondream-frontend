@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,11 +27,10 @@ import com.example.ondream.DataParsingController;
 import com.example.ondream.OnDreamVolley;
 import com.example.ondream.R;
 import com.example.ondream.activities.ContentActivity;
-import com.example.ondream.models.MComment;
 import com.example.ondream.models.MDream;
 
 @SuppressLint({ "ValidFragment", "NewApi" })
-public class NewsFeedFragment extends BaseFragment {
+public class SearchDreamsFragment extends BaseFragment implements OnClickListener {
 
 	public static final String TAG = "NewsFeedFragment";
 	
@@ -39,13 +40,12 @@ public class NewsFeedFragment extends BaseFragment {
 	
 	private List<MDream> listDreams;
 	
-	public NewsFeedFragment() {
+	private EditText etSearch;
+	private Button btnSubmit;
+	
+	public SearchDreamsFragment() {
 		listDreams = new ArrayList<MDream>();
 		
-	}
-	
-	public NewsFeedFragment(MComment user) {
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
@@ -93,8 +93,6 @@ public class NewsFeedFragment extends BaseFragment {
 			((ContentActivity) getActivity()).switchContent(new TimelineFragment(), true, false, "mContext");
 		} else if (item.getItemId() == 5) {
 			((ContentActivity) getActivity()).switchContent(new FriendsFragment(), true, false, "mContext");
-		} else if (item.getItemId() == 6) {
-			((ContentActivity) getActivity()).switchContent(new SearchDreamsFragment(), true, false, "mContext");
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -115,6 +113,10 @@ public class NewsFeedFragment extends BaseFragment {
 	}
 	
 	private void findViews(View view) {
+		etSearch = (EditText) view.findViewById(R.id.et_search);
+		btnSubmit = (Button) view.findViewById(R.id.btn_submit);
+		btnSubmit.setOnClickListener(this);
+		
 		lvNewsFeed = (ListView) view.findViewById(R.id.lv_news);
 		adapter = new NewsFeedAdapter(mContext, R.layout.row_dream, listDreams);
 		lvNewsFeed.setAdapter(adapter);
@@ -179,6 +181,12 @@ public class NewsFeedFragment extends BaseFragment {
 			public TextView tvTags;
 			public TextView tvMentions;
 		}
+		
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 }
