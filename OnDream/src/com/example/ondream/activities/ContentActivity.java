@@ -19,6 +19,7 @@ import com.example.ondream.Constant;
 import com.example.ondream.OnDreamApplication;
 import com.example.ondream.R;
 import com.example.ondream.fragments.NewsFeedFragment;
+import com.example.ondream.fragments.SigninFragment;
 
 /**
  * Content activity for displaying fragments
@@ -76,7 +77,7 @@ public class ContentActivity extends BaseActivity {
 			this.setPendingMessageIdFromIntent(getIntent());
 		}
 		
-		mainContent = new NewsFeedFragment();
+		mainContent = new SigninFragment();
 		switchContent(mainContent, false, true, MAIN_CONTENT);
 		
 		// Get data from server
