@@ -1,8 +1,27 @@
 package com.example.ondream.fragments;
 
-public class NewsFeedFragment {
+import java.util.List;
+
+import android.widget.ListView;
+
+import com.example.ondream.models.MComment;
+import com.example.ondream.models.MDream;
+
+public class NewsFeedFragment extends BaseFragment {
 
 	public static final String TAG = "NewsFeedFragment";
+	
+	private ListView lvNewsFeed;
+	
+	private List<MDream> listDreams;
+	
+	public NewsFeedFragment() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public NewsFeedFragment(MComment user) {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 }
