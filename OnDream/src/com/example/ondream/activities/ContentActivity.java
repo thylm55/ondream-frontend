@@ -18,6 +18,7 @@ import com.actionbarsherlock.widget.SearchView.OnQueryTextListener;
 import com.example.ondream.Constant;
 import com.example.ondream.OnDreamApplication;
 import com.example.ondream.R;
+import com.example.ondream.fragments.NewsFeedFragment;
 
 /**
  * Content activity for displaying fragments
@@ -74,6 +75,9 @@ public class ContentActivity extends BaseActivity {
 		} else {
 			this.setPendingMessageIdFromIntent(getIntent());
 		}
+		
+		mainContent = new NewsFeedFragment();
+		switchContent(mainContent, false, true, MAIN_CONTENT);
 		
 		// Get data from server
 		getLeftMenuData();

@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.ViewConfiguration;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
@@ -105,6 +106,7 @@ public class BaseActivity extends SherlockFragmentActivity {
 		} else if (message.contains(Constant.REQUEST_TIMEOUT)) {
 			Toast.makeText(getBaseContext(), Constant.MESSAGE_REQUEST_TIMEOUT, Toast.LENGTH_SHORT).show();
 		} else {
+			Log.e(TAG, arg0.getMessage());
 			Toast.makeText(getBaseContext(), Constant.MESSSAGE_SERVER_ERROR, Toast.LENGTH_SHORT).show();
 		}
 	}

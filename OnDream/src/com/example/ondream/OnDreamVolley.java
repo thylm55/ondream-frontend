@@ -6,6 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
@@ -22,7 +23,7 @@ public class OnDreamVolley {
 	private String url;
 	
 	private static OnDreamVolley localClient;
-	private static String localClientUrl = "http://localhost/api/v1";
+	private static String localClientUrl = "http://192.168.239.1/api/v1";
 	
 	private OnDreamVolley() {
 		
@@ -52,7 +53,7 @@ public class OnDreamVolley {
 				url = url + key + "=" + params.get(key) + "&";
 			}
 		}
-		//if (Constant.IS_NETWORK_RESQUEST_LOG_ENABLED) LogUtility.e(TAG, "request url: " + url);
+		Log.e(TAG, "request url: " + url);
 		return url;
 	}
 	
@@ -82,8 +83,8 @@ public class OnDreamVolley {
 		JsonObjectRequest jsonRequest = new JsonObjectRequest(Method.POST, url,
 				params, listener, errorListener);
 		mRequestQueue.add(jsonRequest);
-		//if (Constant.IS_NETWORK_RESQUEST_LOG_ENABLED) LogUtility.e(TAG, "post url: " + url);
-		//if (Constant.IS_NETWORK_RESQUEST_LOG_ENABLED) LogUtility.e(TAG, "params: " + params.toString());
+		Log.e(TAG, "post url: " + url);
+		Log.e(TAG, "params: " + params.toString());
 	}
 	
 	/**
@@ -97,5 +98,12 @@ public class OnDreamVolley {
 		}
 		
 		return localClient;
+	}
+	
+	public void getListDreams(String userId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("user_id", userId);
+		
+		OnDreamVolley.get(getUrl("dreams"), params, listener, errorListener);
 	}
 }

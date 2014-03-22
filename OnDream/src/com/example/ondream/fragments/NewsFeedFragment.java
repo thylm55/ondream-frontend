@@ -1,16 +1,26 @@
 package com.example.ondream.fragments;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.android.volley.Response.Listener;
+import com.example.ondream.DataParsingController;
+import com.example.ondream.OnDreamVolley;
 import com.example.ondream.R;
 import com.example.ondream.models.MComment;
 import com.example.ondream.models.MDream;
@@ -22,10 +32,13 @@ public class NewsFeedFragment extends BaseFragment {
 	
 	private ListView lvNewsFeed;
 	
+	private NewsFeedAdapter adapter;
+	
 	private List<MDream> listDreams;
 	
 	public NewsFeedFragment() {
-		// TODO Auto-generated constructor stub
+		listDreams = new ArrayList<MDream>();
+		
 	}
 	
 	public NewsFeedFragment(MComment user) {
@@ -39,11 +52,30 @@ public class NewsFeedFragment extends BaseFragment {
 		
 		findViews(view);
 		
+		getListDreams("3");
+		
 		return view;
+	}
+	
+	private void getListDreams(String userId) {
+		OnDreamVolley.getLocalClient().getListDreams(userId, new Listener<JSONObject>() {
+
+			@Override
+			public void onResponse(JSONObject arg0) {
+				Log.e(TAG, arg0.toString());
+				List<MDream> arrDreams = DataParsingController.parseDreams(arg0);
+				
+				listDreams.addAll(arrDreams);
+				
+				adapter.notifyDataSetChanged();
+			}
+		}, getErrorListener());
 	}
 	
 	private void findViews(View view) {
 		lvNewsFeed = (ListView) view.findViewById(R.id.lv_news);
+		adapter = new NewsFeedAdapter(mContext, R.layout.row_dream, listDreams);
+		lvNewsFeed.setAdapter(adapter);
 	}
 	
 	private class NewsFeedAdapter extends ArrayAdapter<MDream> {
@@ -63,10 +95,48 @@ public class NewsFeedFragment extends BaseFragment {
 		
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
-			return super.getView(position, convertView, parent);
+			
+			View row = convertView;
+			NewsFeedHolder holder;
+			MDream dream = articles.get(position);
+			
+			if (row == null) {
+				row = LayoutInflater.from(context).inflate(resource, parent, false);
+				
+				holder = new NewsFeedHolder();
+				
+				holder.tvAuthor = (TextView) row.findViewById(R.id.tv_name);
+				holder.tvContent = (TextView) row.findViewById(R.id.tv_content);
+				holder.tvCommentIt = (TextView) row.findViewById(R.id.tv_comment_it);
+				holder.tvTags = (TextView) row.findViewById(R.id.tv_tags);
+				holder.tvMentions = (TextView) row.findViewById(R.id.tv_mention);
+				holder.tvCommentIt.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						Log.e(TAG, "onClick");
+					}
+				});
+				
+				row.setTag(holder);
+			} else {
+				holder = (NewsFeedHolder) row.getTag();
+			}
+			
+			holder.tvAuthor.setText(dream.getAuthor());
+			holder.tvContent.setText(dream.getContent());
+			
+			return row;
 		}
 		
+		
+		public class NewsFeedHolder {
+			public TextView tvAuthor;
+			public TextView tvContent;
+			public TextView tvCommentIt;
+			public TextView tvTags;
+			public TextView tvMentions;
+		}
 		
 	}
 }

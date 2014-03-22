@@ -1,7 +1,13 @@
 package com.example.ondream.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 public class MDream {
@@ -23,7 +29,6 @@ public class MDream {
 	
 	private List<MMention> mention;
 	
-	@SerializedName("created_at")
 	private String createdAt;
 
 	public String getId() {
@@ -90,5 +95,37 @@ public class MDream {
 		this.createdAt = createdAt;
 	}
 
+	public void updateTags(JSONArray jsonTags) {
+		Gson gson = new Gson();
+		List<MTag> listTags = new ArrayList<MTag>();
+		for (int i = 0; i < jsonTags.length(); i++) {
+			JSONObject jsonItem;
+			try {
+				jsonItem = jsonTags.getJSONObject(i);
+				MTag item = gson.fromJson(jsonItem.toString(), MTag.class);
+				listTags.add(item);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+
+		this.tags = listTags;
+	}
 	
+	public void updateMention(JSONArray jsonMention) {
+		Gson gson = new Gson();
+		List<MMention> listMentions = new ArrayList<MMention>();
+		for (int i = 0; i < jsonMention.length(); i++) {
+			JSONObject jsonItem;
+			try {
+				jsonItem = jsonMention.getJSONObject(i);
+				MMention item = gson.fromJson(jsonItem.toString(), MMention.class);
+				listMentions.add(item);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+
+		this.mention = listMentions;
+	}
 }
