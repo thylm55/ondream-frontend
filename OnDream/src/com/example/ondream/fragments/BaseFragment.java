@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragment;
@@ -83,6 +84,7 @@ public class BaseFragment extends SherlockFragment {
 	 * @return
 	 */
 	protected Response.ErrorListener getErrorListener() {
+		Log.e(TAG, "error");
 		return new Response.ErrorListener() {
 
 			@Override
@@ -187,5 +189,9 @@ public class BaseFragment extends SherlockFragment {
 	
 	public MUser getCurrentUser() {
 		return ((BaseActivity) getActivity()).getCurrentUser();
+	}
+	
+	public void setCurrentUser(MUser user) {
+		((BaseActivity) getActivity()).setCurrentUser(user);
 	}
 }

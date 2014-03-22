@@ -964,7 +964,7 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040013;
         public static final int abs__title=0x7f04001b;
         public static final int abs__up=0x7f04000b;
-        public static final int action_new_dream=0x7f040043;
+        public static final int action_new_dream=0x7f040042;
         public static final int btnCancel=0x7f040037;
         public static final int btnSubmit=0x7f040038;
         public static final int btn_Signin=0x7f04003c;
@@ -985,12 +985,11 @@ containing a value of this type.
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int tabMode=0x7f040003;
-        public static final int tv_comment_it=0x7f040042;
-        public static final int tv_content=0x7f04003f;
-        public static final int tv_mention=0x7f040041;
+        public static final int tv_comment_it=0x7f040041;
+        public static final int tv_content=0x7f040036;
+        public static final int tv_mention=0x7f040040;
         public static final int tv_name=0x7f04003e;
-        public static final int tv_tags=0x7f040040;
-        public static final int txtUrl=0x7f040036;
+        public static final int tv_tags=0x7f04003f;
         public static final int useLogo=0x7f040004;
         public static final int wrap_content=0x7f040000;
     }

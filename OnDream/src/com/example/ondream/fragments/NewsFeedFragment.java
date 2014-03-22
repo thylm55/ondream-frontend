@@ -24,6 +24,7 @@ import com.android.volley.Response.Listener;
 import com.example.ondream.DataParsingController;
 import com.example.ondream.OnDreamVolley;
 import com.example.ondream.R;
+import com.example.ondream.activities.ContentActivity;
 import com.example.ondream.models.MComment;
 import com.example.ondream.models.MDream;
 
@@ -74,7 +75,7 @@ public class NewsFeedFragment extends BaseFragment {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		if (item.getItemId() == 3) {
-			Log.e(TAG, "newdream");
+			((ContentActivity) getActivity()).switchContent(new AddDreamFragment(), false, true, "mContext");
 		}
 		return super.onOptionsItemSelected(item);
 	}

@@ -109,7 +109,7 @@ public class BaseActivity extends SherlockFragmentActivity {
 		} else if (message.contains(Constant.REQUEST_TIMEOUT)) {
 			Toast.makeText(getBaseContext(), Constant.MESSAGE_REQUEST_TIMEOUT, Toast.LENGTH_SHORT).show();
 		} else {
-			Log.e(TAG, arg0.getMessage());
+			//Log.e(TAG, arg0.getMessage());
 			Toast.makeText(getBaseContext(), Constant.MESSSAGE_SERVER_ERROR, Toast.LENGTH_SHORT).show();
 		}
 	}

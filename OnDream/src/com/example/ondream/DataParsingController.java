@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.example.ondream.models.MDream;
 import com.example.ondream.models.MUser;
 import com.google.gson.Gson;
@@ -50,11 +52,24 @@ public class DataParsingController {
 	
 	public static MUser parseUser(JSONObject jsonObj) {
 		MUser user = new MUser();
-		
 		Gson gson = new Gson();
-		user = gson.fromJson(jsonObj.toString(), MUser.class);
 		
-		return user;
+		try {
+			String success = jsonObj.getString("success");
+			if (success.equals("true")) {
+				JSONObject obj = jsonObj.getJSONObject("data");
+				user = gson.fromJson(obj.toString(), MUser.class);
+				return user;
+			} else {
+				return null;
+			}
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			Log.e("success", "false");
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 
 }

@@ -293,7 +293,7 @@ int id abs__submit_area 0x7f04002f
 int id abs__textButton 0x7f040013
 int id abs__title 0x7f04001b
 int id abs__up 0x7f04000b
-int id action_new_dream 0x7f040043
+int id action_new_dream 0x7f040042
 int id btnCancel 0x7f040037
 int id btnSubmit 0x7f040038
 int id btn_Signin 0x7f04003c
@@ -314,12 +314,11 @@ int id showCustom 0x7f040008
 int id showHome 0x7f040005
 int id showTitle 0x7f040007
 int id tabMode 0x7f040003
-int id tv_comment_it 0x7f040042
-int id tv_content 0x7f04003f
-int id tv_mention 0x7f040041
+int id tv_comment_it 0x7f040041
+int id tv_content 0x7f040036
+int id tv_mention 0x7f040040
 int id tv_name 0x7f04003e
-int id tv_tags 0x7f040040
-int id txtUrl 0x7f040036
+int id tv_tags 0x7f04003f
 int id useLogo 0x7f040004
 int id wrap_content 0x7f040000
 int integer abs__max_action_buttons 0x7f080000
