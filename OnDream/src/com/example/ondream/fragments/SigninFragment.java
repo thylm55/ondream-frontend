@@ -26,6 +26,7 @@ import com.example.ondream.models.MUser;
 public class SigninFragment extends BaseFragment implements OnClickListener 
 {
 	Button btnSignin;
+	Button btnLinkToSignup;
 	EditText edtEmail;
 	EditText edtPasswd;
 	
@@ -39,7 +40,9 @@ public class SigninFragment extends BaseFragment implements OnClickListener
 		btnSignin = (Button) view.findViewById(R.id.btn_Signin);
 		edtEmail = (EditText) view.findViewById(R.id.edt_Email);
 		edtPasswd = (EditText) view.findViewById(R.id.edt_Passwd);
+		btnLinkToSignup = (Button) view.findViewById(R.id.btnLinkToSignup);
 		btnSignin.setOnClickListener(this);
+		btnLinkToSignup.setOnClickListener(this);
 		return view;
 	}
 	
@@ -62,6 +65,10 @@ public class SigninFragment extends BaseFragment implements OnClickListener
 					}
 				}
 			}, getErrorListener());
+		}
+		
+		if (v== btnLinkToSignup){
+			//COde Link two Fragment
 		}
 	}
 }
