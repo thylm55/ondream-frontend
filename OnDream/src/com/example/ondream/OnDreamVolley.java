@@ -1,5 +1,7 @@
 package com.example.ondream;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 
 import org.json.JSONArray;
@@ -101,40 +103,41 @@ public class OnDreamVolley {
 		return localClient;
 	}
 	
-	public void getListDreams(String userId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+	public void getListDreams(boolean isNewsFeed, String userId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("user_id", userId);
 		
-		OnDreamVolley.get(getUrl("dreams"), params, listener, errorListener);
+		if (isNewsFeed) {
+			OnDreamVolley.get(getUrl("dreams"), params, listener, errorListener);
+		} else {
+			OnDreamVolley.get(getUrl("timeline"), params, listener, errorListener);
+		}
 	}
 	
 	public void postLogin(String email, String password, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-		JSONObject params = new JSONObject();
-		try {
-			params.put("email", email);
-			params.put("password", password);
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("email", email);
+		params.put("password", password);
 		
-		OnDreamVolley.post(getUrl("login"), params, listener, errorListener);
+		OnDreamVolley.get(getUrl("login"), params, listener, errorListener);
 	}
 	
 	public void postSendDream(String authorId, String content, String privilege,
 			Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-		JSONObject params = new JSONObject();
+		String query = null;
 		try {
-			params.put("author_id", authorId);
-			params.put("content", content);
-			params.put("privilege", privilege);
-			
-		} catch (JSONException e) {
+			query = URLEncoder.encode(content, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		OnDreamVolley.post(getUrl("new_dream"), params, listener, errorListener);
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("author_id", authorId);
+		params.put("content", query);
+		params.put("privilege", privilege);
+		
+		OnDreamVolley.get(getUrl("new_dream"), params, listener, errorListener);
 	}
 	
 	public void postSendMention(String dreamId, String userId,
