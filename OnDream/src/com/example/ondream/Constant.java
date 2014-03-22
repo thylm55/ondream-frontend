@@ -1,5 +1,6 @@
 package com.example.ondream;
-
+import android.app.ActionBar;
+import android.graphics.drawable.ColorDrawable;
 public class Constant {
 	public static class Config {
 		public static final boolean DEVELOPER_MODE = false;
@@ -28,4 +29,6 @@ public class Constant {
 	public static final int ID_MENU_SEARCH = 1;
 	public static final int ID_MENU_TOUR = 4;
 	public static final int ID_MENU_FEEDBACK = 5;
+	
+	
 }

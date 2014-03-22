@@ -916,13 +916,12 @@ containing a value of this type.
         public static final int button_default=0x7f020073;
         public static final int button_pressed=0x7f020074;
         public static final int ic_drawer=0x7f020075;
-        public static final int ic_launcher=0x7f020076;
-        public static final int ic_logo=0x7f020077;
-        public static final int ic_new_dream=0x7f020078;
-        public static final int ic_new_dream_small=0x7f020079;
-        public static final int textfield=0x7f02007a;
-        public static final int textfield_default=0x7f02007b;
-        public static final int textfield_pressed=0x7f02007c;
+        public static final int ic_logo=0x7f020076;
+        public static final int ic_new_dream=0x7f020077;
+        public static final int ic_new_dream_small=0x7f020078;
+        public static final int textfield=0x7f020079;
+        public static final int textfield_default=0x7f02007a;
+        public static final int textfield_pressed=0x7f02007b;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f040020;
@@ -964,14 +963,19 @@ containing a value of this type.
         public static final int abs__textButton=0x7f040013;
         public static final int abs__title=0x7f04001b;
         public static final int abs__up=0x7f04000b;
-        public static final int action_new_dream=0x7f040042;
+        public static final int action_new_dream=0x7f040047;
         public static final int btnCancel=0x7f040037;
+        public static final int btnSignup=0x7f040042;
         public static final int btnSubmit=0x7f040038;
         public static final int btn_Signin=0x7f04003c;
         public static final int content_frame=0x7f040033;
         public static final int disableHome=0x7f040009;
         public static final int drawer_layout=0x7f040032;
         public static final int edit_query=0x7f040026;
+        public static final int edtCfrPasswd=0x7f040041;
+        public static final int edtEmail=0x7f04003f;
+        public static final int edtName=0x7f04003e;
+        public static final int edtPasswd=0x7f040040;
         public static final int edt_Email=0x7f04003b;
         public static final int edt_Passwd=0x7f04003d;
         public static final int homeAsUp=0x7f040006;
@@ -985,11 +989,11 @@ containing a value of this type.
         public static final int showHome=0x7f040005;
         public static final int showTitle=0x7f040007;
         public static final int tabMode=0x7f040003;
-        public static final int tv_comment_it=0x7f040041;
+        public static final int tv_comment_it=0x7f040046;
         public static final int tv_content=0x7f040036;
-        public static final int tv_mention=0x7f040040;
-        public static final int tv_name=0x7f04003e;
-        public static final int tv_tags=0x7f04003f;
+        public static final int tv_mention=0x7f040045;
+        public static final int tv_name=0x7f040043;
+        public static final int tv_tags=0x7f040044;
         public static final int useLogo=0x7f040004;
         public static final int wrap_content=0x7f040000;
     }
@@ -1022,9 +1026,10 @@ containing a value of this type.
         public static final int fragment_add_dream=0x7f030016;
         public static final int fragment_news_feed=0x7f030017;
         public static final int fragment_signin=0x7f030018;
-        public static final int row_dream=0x7f030019;
-        public static final int sherlock_spinner_dropdown_item=0x7f03001a;
-        public static final int sherlock_spinner_item=0x7f03001b;
+        public static final int fragment_signup=0x7f030019;
+        public static final int row_dream=0x7f03001a;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001b;
+        public static final int sherlock_spinner_item=0x7f03001c;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
