@@ -12,6 +12,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.ondream.activities.BaseActivity;
 import com.example.ondream.activities.ContentActivity;
+import com.example.ondream.models.MUser;
 
 /**
  * Base activity for another activities in app
@@ -182,5 +183,9 @@ public class BaseFragment extends SherlockFragment {
 			BaseActivity activity = (BaseActivity) mContext;
 			activity.showProgressBar(visible);
 		}
+	}
+	
+	public MUser getCurrentUser() {
+		return ((BaseActivity) getActivity()).getCurrentUser();
 	}
 }

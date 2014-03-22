@@ -20,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.ondream.Constant;
 import com.example.ondream.R;
+import com.example.ondream.models.MUser;
 
 /**
  * Base activity for another activities in app
@@ -53,6 +54,8 @@ public class BaseActivity extends SherlockFragmentActivity {
 	 * Value to save name of current fragment
 	 */
 	private String currentFragment;
+	
+	private MUser mCurrentUser;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -315,5 +318,14 @@ public class BaseActivity extends SherlockFragmentActivity {
 
 			actionBar.setDisplayHomeAsUpEnabled(addToBackstack);
 		}
+	}
+	
+	
+	public MUser getCurrentUser() {
+		return mCurrentUser;
+	}
+	
+	public void setCurrentUser(MUser mCurrentUser) {
+		this.mCurrentUser = mCurrentUser;
 	}
 }

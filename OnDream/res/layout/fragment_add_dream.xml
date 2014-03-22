@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/lblUrl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:text="What&apos;s your dream?"
+        android:textColor="#c50300"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtUrl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblUrl"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:hint="Your dream"
+        android:inputType="textUri"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtUrl"
+        android:text="Cancel"
+        android:windowSoftInputMode="stateVisible|adjustPan" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtUrl"
+        android:text="Submit"
+        android:layout_toRightOf="@+id/btnCancel" />
+
+    <TextView
+        android:id="@+id/lblMessage"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSubmit"
+        android:layout_marginTop="15dip"
+        android:padding="10dip"
+        android:textColor="#ff0000" />
+
+</RelativeLayout>
