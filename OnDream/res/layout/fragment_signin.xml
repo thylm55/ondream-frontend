@@ -42,4 +42,13 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp" />
 
+    <Button
+        android:id="@+id/btnLinkToSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        android:text="I need an account ! " />
+
 </RelativeLayout>

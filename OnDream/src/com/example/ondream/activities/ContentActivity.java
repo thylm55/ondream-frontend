@@ -23,6 +23,7 @@ import com.example.ondream.R;
 import com.example.ondream.fragments.FriendsFragment;
 import com.example.ondream.fragments.NewsFeedFragment;
 import com.example.ondream.fragments.SigninFragment;
+import com.example.ondream.fragments.SignupFragment;
 
 /**
  * Content activity for displaying fragments
@@ -67,7 +68,7 @@ public class ContentActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ActionBar ab = getActionBar(); 
-        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#a8b8d0"));     
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#6b95b1"));     
         ab.setBackgroundDrawable(colorDrawable);
 		// Settings
 		currentTitle = getString(R.string.app_name);

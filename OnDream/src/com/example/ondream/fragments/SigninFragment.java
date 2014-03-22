@@ -26,6 +26,7 @@ import com.example.ondream.models.MUser;
 public class SigninFragment extends BaseFragment implements OnClickListener 
 {
 	Button btnSignin;
+	Button btnLinkToSignup;
 	EditText edtEmail;
 	EditText edtPasswd;
 	
@@ -43,7 +44,9 @@ public class SigninFragment extends BaseFragment implements OnClickListener
 		edtEmail.setText("maythywinter@gmail.com");
 		edtPasswd.setText("6789");
 		
+		btnLinkToSignup = (Button) view.findViewById(R.id.btnLinkToSignup);
 		btnSignin.setOnClickListener(this);
+		btnLinkToSignup.setOnClickListener(this);
 		return view;
 	}
 	
@@ -66,6 +69,10 @@ public class SigninFragment extends BaseFragment implements OnClickListener
 					}
 				}
 			}, getErrorListener());
+		}
+		
+		if (v== btnLinkToSignup){
+			((ContentActivity) getActivity()).switchContent(new SignupFragment(), true, false, "mContext");
 		}
 	}
 }
