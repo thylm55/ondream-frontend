@@ -79,11 +79,11 @@ public class NewsFeedFragment extends BaseFragment {
     		.setShowAsAction(MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 		
 		menu.add(Menu.NONE, 5, 1, "Friends")
-			.setIcon(R.drawable.ic_new_dream_small)
+			.setIcon(R.drawable.fr)
 	    	.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		
 		menu.add(Menu.NONE, 6, 1, "Search")
-		.setIcon(R.drawable.ic_new_dream_small)
+		.setIcon(R.drawable.search)
     	.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 	}
 	

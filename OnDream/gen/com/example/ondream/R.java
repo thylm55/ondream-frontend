@@ -922,15 +922,17 @@ containing a value of this type.
         public static final int button_sb_pressed=0x7f020078;
         public static final int button_submit=0x7f020079;
         public static final int detail_background=0x7f02007a;
-        public static final int ic_drawer=0x7f02007b;
-        public static final int ic_logo=0x7f02007c;
-        public static final int ic_new_dream=0x7f02007d;
-        public static final int ic_new_dream_small=0x7f02007e;
-        public static final int textfield=0x7f02007f;
-        public static final int textfield_default=0x7f020080;
-        public static final int textfield_default_s=0x7f020081;
-        public static final int textfield_pressed=0x7f020082;
-        public static final int textfield_pressed_s=0x7f020083;
+        public static final int fr=0x7f02007b;
+        public static final int ic_drawer=0x7f02007c;
+        public static final int ic_logo=0x7f02007d;
+        public static final int ic_new_dream=0x7f02007e;
+        public static final int ic_new_dream_small=0x7f02007f;
+        public static final int search=0x7f020080;
+        public static final int textfield=0x7f020081;
+        public static final int textfield_default=0x7f020082;
+        public static final int textfield_default_s=0x7f020083;
+        public static final int textfield_pressed=0x7f020084;
+        public static final int textfield_pressed_s=0x7f020085;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f040020;
