@@ -1,5 +1,7 @@
 package com.example.ondream.activities;
-
+import android.app.ActionBar;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -63,7 +65,9 @@ public class ContentActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		ActionBar ab = getActionBar(); 
+        ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#a8b8d0"));     
+        ab.setBackgroundDrawable(colorDrawable);
 		// Settings
 		currentTitle = getString(R.string.app_name);
 		setContentView(R.layout.activity_main);

@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background_signup" >
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp"
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:textColor="#ffffff"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+         />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email" 
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:textColor="#ffffff"
+        />
+
+    <EditText
+        android:id="@+id/edtPasswd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:inputType="textPassword" 
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:textColor="#ffffff"
+        android:hint="Password"
+        />
+
+    <EditText
+        android:id="@+id/edtCfrPasswd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPasswd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:inputType="textPassword" 
+        android:background="@drawable/textfield"
+        android:paddingLeft="10dp"
+        android:textColor="#ffffff"
+        android:hint="Confirm Password"
+        />
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtCfrPasswd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Sign Up" 
+        android:background="@drawable/button"/>
+
+</RelativeLayout>
