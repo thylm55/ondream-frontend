@@ -8,6 +8,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.example.ondream.models.MDream;
+import com.example.ondream.models.MUser;
+import com.google.gson.Gson;
 
 public class DataParsingController {
 	
@@ -44,6 +46,15 @@ public class DataParsingController {
 		}
 		
 		return dreams;
+	}
+	
+	public static MUser parseUser(JSONObject jsonObj) {
+		MUser user = new MUser();
+		
+		Gson gson = new Gson();
+		user = gson.fromJson(jsonObj.toString(), MUser.class);
+		
+		return user;
 	}
 
 }

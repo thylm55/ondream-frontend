@@ -3,6 +3,7 @@ package com.example.ondream;
 import java.util.HashMap;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
@@ -107,10 +108,16 @@ public class OnDreamVolley {
 		OnDreamVolley.get(getUrl("dreams"), params, listener, errorListener);
 	}
 	
-	public void postLogin(String email, String password,
-			Response<JSONObject> listener, Response.ErrorListener errorListener) {
-		HashMap<String, String> params = new HashMap<String, String>();
-		/*params.put("email", userId);
-		params.put("email", userId);*/
+	public void postLogin(String email, String password, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		JSONObject params = new JSONObject();
+		try {
+			params.put("email", email);
+			params.put("password", password);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		OnDreamVolley.post(getUrl("login"), params, listener, errorListener);
 	}
 }
