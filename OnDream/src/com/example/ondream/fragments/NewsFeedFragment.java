@@ -28,7 +28,7 @@ import com.example.ondream.activities.ContentActivity;
 import com.example.ondream.models.MComment;
 import com.example.ondream.models.MDream;
 
-@SuppressLint("ValidFragment")
+@SuppressLint({ "ValidFragment", "NewApi" })
 public class NewsFeedFragment extends BaseFragment {
 
 	public static final String TAG = "NewsFeedFragment";
@@ -55,6 +55,8 @@ public class NewsFeedFragment extends BaseFragment {
 		
 		setHasOptionsMenu(true);
 		
+		getActivity().getActionBar().setTitle("News Feeds");
+		
 		findViews(view);
 		
 		getListDreams(getCurrentUser().getId());
@@ -71,8 +73,12 @@ public class NewsFeedFragment extends BaseFragment {
 	    	.setIcon(R.drawable.ic_new_dream_small)
 	    	.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		
-		menu.add(Menu.NONE, 4, 1, "Timeline")
-    	.setShowAsAction(MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		menu.add(Menu.NONE, 4, 1, "Your Timeline")
+    		.setShowAsAction(MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+		
+		menu.add(Menu.NONE, 5, 1, "Friends")
+			.setIcon(R.drawable.ic_new_dream_small)
+	    	.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 	}
 	
 	@Override
@@ -81,6 +87,8 @@ public class NewsFeedFragment extends BaseFragment {
 			((ContentActivity) getActivity()).switchContent(new AddDreamFragment(), true, false, "mContext");
 		} else if (item.getItemId() == 4) {
 			((ContentActivity) getActivity()).switchContent(new TimelineFragment(), true, false, "mContext");
+		} else if (item.getItemId() == 5) {
+			((ContentActivity) getActivity()).switchContent(new FriendsFragment(), true, false, "mContext");
 		}
 		return super.onOptionsItemSelected(item);
 	}

@@ -39,6 +39,10 @@ public class SigninFragment extends BaseFragment implements OnClickListener
 		btnSignin = (Button) view.findViewById(R.id.btn_Signin);
 		edtEmail = (EditText) view.findViewById(R.id.edt_Email);
 		edtPasswd = (EditText) view.findViewById(R.id.edt_Passwd);
+		
+		edtEmail.setText("maythywinter@gmail.com");
+		edtPasswd.setText("6789");
+		
 		btnSignin.setOnClickListener(this);
 		return view;
 	}

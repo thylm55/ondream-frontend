@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp" >
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_logo" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_avatar"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:text="Name"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignLeft="@+id/iv_avatar"
+        android:layout_below="@+id/iv_avatar"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:background="#c0c0c0"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_title"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="2dp"
+        android:text="status" />
+
+    <TextView
+        android:id="@+id/btnGoodnight"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="#ffcf1d"
+        android:padding="5dp"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="10dp"
+        android:text="Say goodnight"
+        android:layout_alignParentRight="true"
+        android:clickable="true" />
+
+</RelativeLayout>

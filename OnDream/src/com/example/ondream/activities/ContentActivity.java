@@ -20,6 +20,7 @@ import com.actionbarsherlock.widget.SearchView.OnQueryTextListener;
 import com.example.ondream.Constant;
 import com.example.ondream.OnDreamApplication;
 import com.example.ondream.R;
+import com.example.ondream.fragments.FriendsFragment;
 import com.example.ondream.fragments.NewsFeedFragment;
 import com.example.ondream.fragments.SigninFragment;
 

@@ -38,9 +38,15 @@ public class TimelineFragment extends BaseFragment {
 	
 	private List<MDream> listDreams;
 	
+	private String friendId;
+	
 	public TimelineFragment() {
-		listDreams = new ArrayList<MDream>();
-		
+		listDreams = new ArrayList<MDream>();	
+	}
+	
+	public TimelineFragment(String friendId) {
+		listDreams = new ArrayList<MDream>();	
+		this.friendId = friendId;
 	}
 	
 	@Override
@@ -52,7 +58,11 @@ public class TimelineFragment extends BaseFragment {
 		
 		findViews(view);
 		
-		getListDreams(getCurrentUser().getId());
+		if (friendId != null) {
+			getListDreams(friendId);
+		} else {
+			getListDreams(getCurrentUser().getId());	
+		}
 		
 		return view;
 	}
