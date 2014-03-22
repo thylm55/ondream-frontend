@@ -52,7 +52,7 @@ public class NewsFeedFragment extends BaseFragment {
 		
 		findViews(view);
 		
-		getListDreams("3");
+		getListDreams("1");
 		
 		return view;
 	}
