@@ -3,7 +3,6 @@ package com.example.ondream.fragments;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
@@ -18,6 +17,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 import com.android.volley.Response.Listener;
 import com.example.ondream.DataParsingController;
 import com.example.ondream.OnDreamVolley;
@@ -50,11 +52,31 @@ public class NewsFeedFragment extends BaseFragment {
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_news_feed, null);
 		
+		setHasOptionsMenu(true);
+		
 		findViews(view);
 		
-		getListDreams("1");
+		getListDreams(getCurrentUser().getId());
 		
 		return view;
+	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		super.onCreateOptionsMenu(menu, inflater);
+		
+		getSherlockActivity().getSupportMenuInflater().inflate(R.menu.main, menu);
+		menu.add(Menu.NONE, 3, 1, "New Dream")
+	    	.setIcon(R.drawable.ic_new_dream_small)
+	    	.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == 3) {
+			Log.e(TAG, "newdream");
+		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 	private void getListDreams(String userId) {

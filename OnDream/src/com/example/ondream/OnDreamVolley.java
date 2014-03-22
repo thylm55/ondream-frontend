@@ -120,4 +120,50 @@ public class OnDreamVolley {
 		
 		OnDreamVolley.post(getUrl("login"), params, listener, errorListener);
 	}
+	
+	public void postSendDream(String authorId, String content, String privilege,
+			Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		JSONObject params = new JSONObject();
+		try {
+			params.put("author_id", authorId);
+			params.put("content", content);
+			params.put("privilege", privilege);
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		OnDreamVolley.post(getUrl("new_dream"), params, listener, errorListener);
+	}
+	
+	public void postSendMention(String dreamId, String userId,
+			Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		JSONObject params = new JSONObject();
+		try {
+			params.put("dream_id", dreamId);
+			params.put("user_id", userId);
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		OnDreamVolley.post(getUrl("new_mention"), params, listener, errorListener);
+	}
+	
+	public void postSendTag(String dreamId, String tagName,
+			Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		JSONObject params = new JSONObject();
+		try {
+			params.put("dream_id", dreamId);
+			params.put("tag_name", tagName);
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		OnDreamVolley.post(getUrl("new_tag"), params, listener, errorListener);
+	}
 }
