@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -118,6 +120,13 @@ public class NewsFeedFragment extends BaseFragment {
 		lvNewsFeed = (ListView) view.findViewById(R.id.lv_news);
 		adapter = new NewsFeedAdapter(mContext, R.layout.row_dream, listDreams);
 		lvNewsFeed.setAdapter(adapter);
+		lvNewsFeed.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+				//((ContentActivity) getActivity()).switchContent(new , true, false, "mContext");
+			}
+		});
 	}
 	
 	private class NewsFeedAdapter extends ArrayAdapter<MDream> {

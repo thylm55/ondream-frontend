@@ -51,15 +51,13 @@ public class SearchDreamsFragment extends BaseFragment implements OnClickListene
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_news_feed, null);
+		View view = inflater.inflate(R.layout.fragment_search_dreams, null);
 		
 		setHasOptionsMenu(true);
 		
 		getActivity().getActionBar().setTitle("News Feeds");
 		
 		findViews(view);
-		
-		getListDreams(getCurrentUser().getId());
 		
 		return view;
 	}
@@ -118,6 +116,7 @@ public class SearchDreamsFragment extends BaseFragment implements OnClickListene
 		btnSubmit.setOnClickListener(this);
 		
 		lvNewsFeed = (ListView) view.findViewById(R.id.lv_news);
+		lvNewsFeed.setVisibility(View.GONE);
 		adapter = new NewsFeedAdapter(mContext, R.layout.row_dream, listDreams);
 		lvNewsFeed.setAdapter(adapter);
 	}
@@ -186,7 +185,21 @@ public class SearchDreamsFragment extends BaseFragment implements OnClickListene
 
 	@Override
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
-		
+		if (arg0 == btnSubmit) {
+			lvNewsFeed.setVisibility(View.VISIBLE);
+			
+			OnDreamVolley.getLocalClient().getListSearchDreams(etSearch.getText().toString(), new Listener<JSONObject>() {
+
+				@Override
+				public void onResponse(JSONObject arg0) {
+					List<MDream> arrDreams = DataParsingController.parseDreams(arg0);
+					
+					listDreams.clear();
+					listDreams.addAll(arrDreams);
+					
+					adapter.notifyDataSetChanged();
+				}
+			}, getErrorListener());
+		}
 	}
 }

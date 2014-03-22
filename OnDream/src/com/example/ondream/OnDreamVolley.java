@@ -114,6 +114,13 @@ public class OnDreamVolley {
 		}
 	}
 	
+	public void getListSearchDreams(String tag, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("tag", tag);
+		
+		OnDreamVolley.get(getUrl("find_dreams"), params, listener, errorListener);
+	}
+	
 	public void getListFriends(String userId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("user_id", userId);
