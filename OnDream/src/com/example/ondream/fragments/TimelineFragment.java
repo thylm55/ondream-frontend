@@ -25,11 +25,10 @@ import com.example.ondream.DataParsingController;
 import com.example.ondream.OnDreamVolley;
 import com.example.ondream.R;
 import com.example.ondream.activities.ContentActivity;
-import com.example.ondream.models.MComment;
 import com.example.ondream.models.MDream;
 
 @SuppressLint("ValidFragment")
-public class NewsFeedFragment extends BaseFragment {
+public class TimelineFragment extends BaseFragment {
 
 	public static final String TAG = "NewsFeedFragment";
 	
@@ -39,13 +38,9 @@ public class NewsFeedFragment extends BaseFragment {
 	
 	private List<MDream> listDreams;
 	
-	public NewsFeedFragment() {
+	public TimelineFragment() {
 		listDreams = new ArrayList<MDream>();
 		
-	}
-	
-	public NewsFeedFragment(MComment user) {
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override
@@ -70,23 +65,20 @@ public class NewsFeedFragment extends BaseFragment {
 		menu.add(Menu.NONE, 3, 1, "New Dream")
 	    	.setIcon(R.drawable.ic_new_dream_small)
 	    	.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-		
-		menu.add(Menu.NONE, 4, 1, "Timeline")
-    	.setShowAsAction(MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == 3) {
-			((ContentActivity) getActivity()).switchContent(new AddDreamFragment(), true, false, "mContext");
-		} else if (item.getItemId() == 4) {
-			((ContentActivity) getActivity()).switchContent(new TimelineFragment(), true, false, "mContext");
+		if (item.getItemId() == android.R.id.home) {
+			getActivity().getSupportFragmentManager().popBackStack();
+		} else if (item.getItemId() == 3) {
+			((ContentActivity) getActivity()).switchContent(new AddDreamFragment(), false, true, "mContext");
 		}
 		return super.onOptionsItemSelected(item);
 	}
 	
 	private void getListDreams(String userId) {
-		OnDreamVolley.getLocalClient().getListDreams(true, userId, new Listener<JSONObject>() {
+		OnDreamVolley.getLocalClient().getListDreams(false, userId, new Listener<JSONObject>() {
 
 			@Override
 			public void onResponse(JSONObject arg0) {

@@ -103,11 +103,15 @@ public class OnDreamVolley {
 		return localClient;
 	}
 	
-	public void getListDreams(String userId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+	public void getListDreams(boolean isNewsFeed, String userId, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("user_id", userId);
 		
-		OnDreamVolley.get(getUrl("dreams"), params, listener, errorListener);
+		if (isNewsFeed) {
+			OnDreamVolley.get(getUrl("dreams"), params, listener, errorListener);
+		} else {
+			OnDreamVolley.get(getUrl("timeline"), params, listener, errorListener);
+		}
 	}
 	
 	public void postLogin(String email, String password, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {

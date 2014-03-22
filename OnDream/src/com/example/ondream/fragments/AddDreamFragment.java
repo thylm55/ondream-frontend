@@ -3,7 +3,6 @@ package com.example.ondream.fragments;
 import org.json.JSONObject;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,12 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.view.MenuItem;
 import com.android.volley.Response.Listener;
-import com.example.ondream.DataParsingController;
 import com.example.ondream.OnDreamVolley;
 import com.example.ondream.R;
 import com.example.ondream.activities.ContentActivity;
-import com.example.ondream.models.MUser;
 
 public class AddDreamFragment extends BaseFragment implements OnClickListener {
 	
@@ -28,7 +26,7 @@ public class AddDreamFragment extends BaseFragment implements OnClickListener {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_add_dream, null);
-		
+		setHasOptionsMenu(true);
 		findViews(view);
 		
 		return view;
@@ -38,6 +36,14 @@ public class AddDreamFragment extends BaseFragment implements OnClickListener {
 		tvContent = (TextView) view.findViewById(R.id.tv_content);
 		btnSubmit = (Button) view.findViewById(R.id.btnSubmit);
 		btnSubmit.setOnClickListener(this);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == android.R.id.home) {
+			getActivity().getSupportFragmentManager().popBackStack();
+		}
+		return true;
 	}
 
 	@Override
